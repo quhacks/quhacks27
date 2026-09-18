@@ -8,12 +8,7 @@ export default function TeamSection() {
         ["Ankit Mohanty", "Director", "headshots/ankit_headshot.png"],
         ["Jayson Liu", "Director", "headshots/jayson_headshot.jpg"],
 
-
-        // Outreach
-        ["Nicholas Chen", "Outreach Lead", "headshots/nicholas_headshot.jpg", "center 10%"],
-        ["Minul Wehella-Gamage", "Outreach", "headshots/minul_headshot.jpg", "center 5%"],
-
-        // Sponsor
+         // Sponsor
         ["Evan Luo", "Sponsor Lead", "headshots/evan_headshot_cropped.jpeg"],
         ["Roshan Gopi", "Sponsor", "headshots/roshan_headshot.jpg"],
 
@@ -21,6 +16,11 @@ export default function TeamSection() {
         ["Zachary Schmelzer", "Website", "headshots/zachary_headshot.jpg"],
         ["Ehaan Akbar", "Website", "headshots/ehaan_headshot.jpg"],
         ["Vrukshav Viswanath", "Website", "headshots/vrukshav_headshot.jpg"],
+
+        // Outreach
+        ["Nicholas Chen", "Outreach Lead", "headshots/nicholas_headshot.jpg", "center 10%"],
+        ["Minul Wehella-Gamage", "Outreach", "headshots/minul_headshot.jpg", "center 5%"],
+
 
 
         // Graphic Design
