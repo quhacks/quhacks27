@@ -1,30 +1,23 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-
-import NavBar from './components/navbar/navbar'
-import Footer from './components/footer/footer'
-
-const inter = Inter({ subsets: ['latin'] })
+import './globals.css';
+import NavBar from './components/navbar/navbar';
+import Footer from './components/footer/footer';
 
 export const metadata = {
-  title: 'QuHacks 2026',
-  description: "MD's largest annual student led hackathon!",
+  title: 'QuHacks 2027 | 10th Anniversary Hackathon',
+  description: 'QuHacks is a free, student-run hackathon for middle and high school students. Join us in 2027 for our 10th anniversary!',
   metadataBase: new URL('https://quhacks.tech'),
-}
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      </head>
-      <body className={inter.className}>   
-        <NavBar></NavBar>     
-        <section className='page'>
+      <body>
+        <NavBar />
+        <div className="page" id="main-content" tabIndex={-1}>
           {children}
-        </section>
-        <Footer></Footer>
+        </div>
+        <Footer />
       </body>
     </html>
-  )
+  );
 }

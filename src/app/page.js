@@ -1,87 +1,81 @@
-"use client"
-import Image from 'next/image'
-import styles from './page.module.css'
-import AboutSection from './components/about/about';
-import ScheduleSection from './components/schedule/schedule';
+import Link from 'next/link';
+import styles from './page.module.css';
 import TeamSection from './components/team/team';
-import Faq from './components/faq/faq';
 import Sponsors from './components/sponsors/sponsors';
-import { useEffect, useState } from 'react';
-import { areSubmissionsOpen, isGalleryOpen } from './services/projectService';
-import { useRouter } from 'next/navigation';
-
+import Faq from './components/faq/faq';
+import Freddy from './components/freddy';
+import JungleVines from './components/jungleVines';
 
 export default function Home() {
-  let [showRegisterModal, setShowRegisterModal] = useState(false);
-  let [submbissionsOpen, setSubmissionsOpen] = useState(false)
-  let [galleryOpen, setGalleryOpen] = useState(false)
-
-  const router = useRouter()
-
-
-  useEffect(() => {
-    async function getStatus() {
-      setSubmissionsOpen((await areSubmissionsOpen()).open)
-      setGalleryOpen(await isGalleryOpen())
-    }
-
-    getStatus()
-  }, [])
-
   return (
     <main className={styles.main}>
-      {
-        showRegisterModal ?  
-        <div className={styles.modalContainer}>
-            <div className={styles.modal}>
-              <div className={styles.modalHeader}>
-                <h2>Heads Up!</h2>
-              </div>
-              <div className={styles.modalContent}>
-                <p>Clicking the register button below will take you to our event page on Major League Hacking (MLH). If you don't have one already, you will need to create a MyMLH account, then complete the registration process with your new account. If you experience any problems, contact us at <a className={styles.navlink} href="mailto:info@quhacks.tech">info@quhacks.tech</a> or on our <a rel="noreferrer noopener" target='_blank' href="https://discord.gg/quhacks">discord server</a>.</p>
-                <p><strong>The registration process is not completed until you receive a registration confirmation email!</strong></p>
-                <div className={styles.modalBtns}>
-                  <a href="https://events.mlh.io/events/10536-quhacks-2024" rel="noreferrer noopener" target='_blank'  className={`btn-primary ${styles.registerBtn}`} onClick={() => setShowRegisterModal(false)}>Register!</a>
-                  <button className="btn-secondary" onClick={() => setShowRegisterModal(false)}>Cancel</button>
-                </div>
-              </div>
-            </div>
-        </div>
-        : ""
-      }
-      <div className={styles.announcementBanner}>
-        <p>📢  Want to help make QuHacks possible? Donate <a href="https://hcb.hackclub.com/donations/start/quhacks" rel="noreferrer noopener" target="_blank">HERE</a>!</p>
-      </div>
-      <div className={styles.homecontainer}>
-          <Image alt='QuHacks Logo' src="logo.png" width={100} height={100} sizes='(max-width: 750px) 15rem, 20rem' className={styles.logo} />
-          <div>
-            <span className={styles.title}>QuHacks 2026</span>
-            <p>February 7th @ Howard Community College (HCC)</p>
-            <div className={styles.btngroup}>
-              {/* Logic for register: onClick={() => setShowRegisterModal(true)} */}
-              <button className='btn-primary' disabled={true} onClick={() => {window.open("https://forms.gle/pvYGmoQvUrAeb15a8", '_blank', 'noopener, noreferrer');}}>Register To Attend!</button>
-              <div className={styles.secondaryBtns}>
-                <button className={`btn-secondary ${styles.submitBtn}`} onClick={() => {window.open("https://quhacks-2026.devpost.com/", '_blank', 'noopener, noreferrer');}} disabled={false /*!submbissionsOpen*/}>View Devpost</button>
-                <button className={`btn-secondary ${styles.galleryBtn}`} onClick={() => {window.open("https://quhacks-2026.devpost.com/project-gallery");}} disabled={!galleryOpen}>View Gallery &gt;</button>
-              </div>
-            </div>
+      <section className={styles.hero} aria-labelledby="hero-title">
+        <img className={styles.jungle} src="/theme/jungle.png" alt="" fetchPriority="high" />
+        <div className={styles.heroContent}>
+          <p className={styles.anniversary}>Our 10th anniversary!</p>
+          <h1 id="hero-title">QuHacks <span>2027</span></h1>
+          <p className={styles.subtitle}>A hackathon for middle &amp; high school students</p>
+          <p className={styles.eventDetails}>Free to attend · All experience levels welcome</p>
+          <div className={styles.heroButtons}>
+            <button className="btn-primary" disabled>Registration coming soon</button>
+            <a className="btn-secondary" href="https://discord.gg/qYND4HeAdH" target="_blank" rel="noopener noreferrer">Join our Discord</a>
           </div>
-      </div>
-      <div className={styles.content} id="about">
-        <AboutSection></AboutSection>
-      </div>
-      <div className={styles.content} id="schedule">
-        <ScheduleSection></ScheduleSection>
-      </div>
-      <div className={styles.content} id="faq">
-        <Faq></Faq>
-      </div>
-      <div className={styles.content} id="sponsors">
-        <Sponsors></Sponsors>
-      </div>
-      <div className={styles.content} id="team">
-        <TeamSection></TeamSection>
+          <p className={styles.dateNote}>2027 date &amp; location to be announced</p>
+        </div>
+        <div className={styles.heroDuck}>
+          <span className={styles.bubble}>see you in the jungle!</span>
+          <Freddy />
+        </div>
+        <a className={styles.scroll} href="#about" aria-label="Scroll to About QuHacks">↓</a>
+      </section>
+
+      <div className={styles.forest}>
+        <JungleVines className={styles.vinesLeft} />
+        <JungleVines className={styles.vinesRight} />
+        <div className={styles.content}>
+          <section className={styles.about} id="about" aria-labelledby="about-title">
+            <div>
+              <h2 id="about-title">About QuHacks</h2>
+              <p>QuHacks is a free, day-long hackathon run by students, for students. Middle and high schoolers from across the DMV come together to code, try something new, and hang out with people who love making things.</p>
+              <p>Work on a project with friends, learn something at a workshop, and show off what you made. Never written a line of code? You’re welcome here too!</p>
+              <p>This year, we’re celebrating our <strong>10th anniversary</strong> with a jungle theme (and, of course, our duck Freddy).</p>
+              <Link className={styles.inlineLink} href="/timeline">See past QuHacks events →</Link>
+            </div>
+            <div className={styles.aboutDuck}>
+              <span className={styles.bubble}>hi, I’m Freddy :)</span>
+              <Freddy pose="wave" />
+              <div className={styles.log} />
+            </div>
+          </section>
+
+          <section className={styles.schedule} id="schedule" aria-labelledby="schedule-title">
+            <h2 id="schedule-title">Schedule</h2>
+            <div className={styles.scheduleNote}>
+              <div className={styles.scheduleDuck}><Freddy pose="note" /></div>
+              <div>
+                <h3>We’re still planning the day!</h3>
+                <p>The 2027 schedule will be posted here once it’s ready. Expect time for hacking, workshops, meeting teammates, and sharing your projects.</p>
+                <a className={styles.inlineLink} href="https://discord.gg/qYND4HeAdH" target="_blank" rel="noopener noreferrer">Get updates on Discord →</a>
+              </div>
+            </div>
+          </section>
+
+          <section className={styles.section} id="faq"><Faq /></section>
+
+          <section className={styles.section} id="sponsors" aria-labelledby="sponsors-title">
+            <div className={styles.sponsorHeading}>
+              <div>
+                <h2 id="sponsors-title">Sponsors</h2>
+                <p>Want to help keep QuHacks free? Check out our <a className={styles.inlineLink} href="/QuHacks-2027-Sponsorship.pdf" target="_blank" rel="noopener noreferrer">sponsorship prospectus</a> or email <a className={styles.inlineLink} href="mailto:info@quhacks.tech">info@quhacks.tech</a>.</p>
+              </div>
+              <div className={styles.sponsorDuck} aria-hidden="true"><Freddy pose="wave" /></div>
+            </div>
+            <Sponsors />
+          </section>
+
+          <section className={styles.section} id="team"><TeamSection /></section>
+        </div>
       </div>
     </main>
-  )
+  );
 }

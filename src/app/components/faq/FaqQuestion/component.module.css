@@ -1,37 +1,19 @@
-.card {
-    border: 1px solid var(--text-accent);
+.card { border-bottom: 1px solid #4e7260; }
+.card summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 21px 0;
+  color: #f6f3da;
+  font-size: 16px;
+  line-height: 1.4;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
 }
-
-.btn {
-    width: 100%;
-    background-color: var(--background-accent);
-    color: white;
-    border: none;
-    padding: 0.75rem;
-    text-align: left;
-    font-family: monospace;
-    font-size: 1.25rem;
-    font-style: italic;
-    border-bottom: 1px solid var(--text-accent);
-    cursor: pointer;
-}
-
-.btn:hover {
-    opacity: 80%;
-}
-
-
-.text {
-    padding: 1rem;
-}
-
-.textHidden {
-    height: 0;
-    padding: 0;
-}
-
-
-.textBase {
-    transition: 0.25s;
-    overflow: hidden;
-}
+.card summary::-webkit-details-marker { display: none; }
+.card summary span::before { content: '+'; font-size: 25px; font-weight: 400; color: #ffdf87; }
+.card[open] summary span::before { content: '−'; }
+.card > p { font-size: 15px !important; line-height: 1.75 !important; padding: 0 20px 8px 0; color: #d6e7d2 !important; }
+.card summary:hover { color: #ffdf87; }

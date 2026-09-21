@@ -1,6 +1,5 @@
 import styles from './component.module.css';
 import TeamCard from './teamcard/teamcard'
-import Link from 'next/link';
 
 export default function TeamSection() {
     let teamCards = [
@@ -44,7 +43,8 @@ export default function TeamSection() {
 
     return (
         <div className={styles.sectionContainer}>
-            <h1 className={styles.title}>Meet the Team</h1>
+            <h2 className={styles.title}>Meet the team</h2>
+            <p className={styles.intro}>The students putting QuHacks together.</p>
             <div className={styles.cards}>
                 {teamCards}
             </div>

@@ -6,7 +6,8 @@ export default function Timeline() {
             <div className={styles.headContainer}>
                 <div className={styles.head}>
                     <div className={styles.headtext}>
-                        <h1>Timeline</h1>
+                        <p className="eyebrow">TEN YEARS OF IDEAS, PEOPLE &amp; IMPACT</p>
+                        <h1>Our story.</h1>
                     </div>
                 </div>
             </div>
@@ -14,7 +15,7 @@ export default function Timeline() {
                 <div className={styles.timeline}>
                     <div className={styles.timelineCard}>
                         <div className={styles.imgContainer}>
-                            <img src="timeline/pic-2025.jpg" />
+                            <img src="/timeline/pic-2025.jpg" />
                         </div>
                         <div className={styles.leftContainer}>
                             <header className={styles.cardHeader}>QuHacks 2025</header>
@@ -26,7 +27,7 @@ export default function Timeline() {
                     </div>
                     <div className={styles.timelineCard}>
                         <div className={styles.imgContainer}>
-                            <img src="timeline/pic-2024.png" />
+                            <img src="/timeline/pic-2024.png" />
                         </div>
                         <div className={styles.leftContainer}>
                             <header className={styles.cardHeader}>QuHacks 2024</header>
@@ -38,7 +39,7 @@ export default function Timeline() {
                     </div>
                     <div className={styles.timelineCard}>
                         <div className={styles.imgContainer}>
-                        <img src="timeline/pic-2023.jpg" />
+                        <img src="/timeline/pic-2023.jpg" />
                         </div>
                         <div className={styles.leftContainer}>
                             <header className={styles.cardHeader}>QuHacks 2023</header>
@@ -50,7 +51,7 @@ export default function Timeline() {
                     </div>
                     <div className={styles.timelineCard}>
                         <div className={styles.imgContainer}>
-                        <img src="timeline/pic-2021.png" />
+                        <img src="/timeline/pic-2021.png" />
                         </div>
                         <div className={styles.leftContainer}>
                             <header className={styles.cardHeader}>QuHacks 2021</header>
@@ -61,7 +62,7 @@ export default function Timeline() {
                     </div>
                     <div className={styles.timelineCard}>
                         <div className={styles.imgContainer}>
-                        <img src="timeline/pic-2020.png" />
+                        <img src="/timeline/pic-2020.png" />
                         </div>
                         <div className={styles.leftContainer}>
                             <header className={styles.cardHeader}>QuHacks 2020</header>
@@ -72,7 +73,7 @@ export default function Timeline() {
                     </div>
                     <div className={styles.timelineCard}>
                         <div className={styles.imgContainer}>
-                        <img src="timeline/pic-2019.jpg" />
+                        <img src="/timeline/pic-2019.jpg" />
                         </div>
                         <div className={styles.leftContainer}>
                             <header className={styles.cardHeader}>QuHacks 2019</header>
@@ -83,7 +84,7 @@ export default function Timeline() {
                     </div>
                     <div className={styles.timelineCard}>
                         <div className={styles.imgContainer}>
-                        <   img src="timeline/pic-2018.jpg" />
+                        <   img src="/timeline/pic-2018.jpg" />
                         </div>
                         <div className={styles.leftContainer}>
                             <header className={styles.cardHeader}>QuHacks 2018</header>
@@ -94,7 +95,7 @@ export default function Timeline() {
                     </div>
                     <div className={styles.timelineCard}>
                         <div className={styles.imgContainer}>
-                            <img src="timeline/pic-2017.jpg" />
+                            <img src="/timeline/pic-2017.jpg" />
                         </div>
                         <div className={styles.leftContainer}>
                             <header className={styles.cardHeader}>QuHacks 2017</header>
@@ -106,7 +107,7 @@ export default function Timeline() {
 
                     <div className={styles.timelineCard}>
                         <div className={styles.imgContainer}>
-                            <img src="timeline/pic-2016.jpg" />
+                            <img src="/timeline/pic-2016.jpg" />
                         </div>
                         <div className={styles.leftContainer}>
                             <header className={styles.cardHeader}>QuHacks 2016</header>

@@ -1,57 +1,28 @@
-import FaqQuestion from './FaqQuestion/faqQuestion'
-import styles from './component.module.css'
+import FaqQuestion from './FaqQuestion/faqQuestion';
+import styles from './component.module.css';
+
+const questions = [
+  ['What is a hackathon?', 'A hackathon is an event where you build a project from scratch, on your own or with a team. It could be a game, website, app, robot, or something else entirely. There are also workshops and chances to meet other students!'],
+  ['Who can attend?', 'Any current middle or high school student can participate, regardless of experience. If you’ve graduated and want to volunteer or mentor, email info@quhacks.tech.'],
+  ['Do I need to know how to code?', 'Nope! You can learn at workshops, ask for help, and try building your first project. Beginners are welcome.'],
+  ['How much does it cost?', 'Nothing! QuHacks is free to attend, thanks to our sponsors.'],
+  ['When and where is it?', 'QuHacks 2027 is our 10th anniversary event. We’ll announce the date, venue, and registration details here and on Discord when they’re confirmed.'],
+  ['What if I don’t have a team?', 'You can come on your own and meet teammates at the event, or work solo. Teams can have up to four people.'],
+  ['What should I bring?', 'A laptop or another device you can code on, its charger, and any materials you need for your project. We’ll share a full list before the event.'],
+  ['Can I use a project I’ve already started?', 'Please start your project at QuHacks so everyone gets the same amount of time to build. You’re welcome to think of ideas beforehand.'],
+  ['Who’s the duck?', 'That’s Freddy! He’s our mascot, rubber-duck debugging buddy, and this year’s resident jungle explorer.'],
+  ['I have another question!', 'Send us a message on Discord or email info@quhacks.tech. We’re happy to help.'],
+];
 
 export default function Faq() {
-
-    return (
-        <div className={styles.sectionContainer}>
-            <h1 className={styles.title}>FAQ</h1>
-            <div className={styles.container}>
-                <div className={styles.column}>
-                    <FaqQuestion 
-                        question={"What is a Hackathon?"} 
-                        answer={`A hackathon is a coding marathon - it's like a real-time programming fair where students develop an idea and bring it to life through code. A project could be a game, website, app, robot, Arduino project, whatever! If you enjoy programming or technology in general, hackathons are great places to meet friendly, like-minded people.`}
-                        />
-                    <FaqQuestion 
-                        question={"Do I need to know how to code?"}
-                        answer={`No, you don't! Even if you aren't able to code beforehand, you can attend workshops, learn some code, and still submit a project. We will have both a novice division (set up specifically for those new to coding) and a main division, and the "Intro to Programming" workshop is tailor made for new programmers.`}
-                    />
-                    <FaqQuestion 
-                        question={"Who can attend?"} 
-                        answer={`You are eligible to participate in QuHacks 2026 if you currently attend middle or high school. If you have already graduated but would still like to attend the event, please consider volunteering or mentoring for the event! Send us an email at info@quhacks.tech for more information on contributing to QuHacks, or if you have any questions about our eligibility.`}
-                    />
-                    <FaqQuestion 
-                        question={"How much does QuHacks cost?"} 
-                        answer={`Nothing! This event is entirely free of charge, thanks to our awesome sponsors. If you're interested in becoming a sponsor, please email us at info@quhacks.tech.`}
-                    />
-                    <FaqQuestion 
-                        question={"Can I win any prizes?"} 
-                        answer={`But of course! You can win both swag and cool tech! You'll have the chance to win gaming monitors, tablets, headphones, drones, and more...`}
-                    />
-                </div>
-                <div className={styles.column}>
-                    <FaqQuestion 
-                        question={"What do I need to compete?"} 
-                        answer={`The only thing you need is a device that can connect to the internet, and any materials needed for creating your hack!`}
-                    />
-                    <FaqQuestion 
-                        question={"Where is QuHacks?"} 
-                        answer={`QuHacks 2026 will be held at the Duncan Hall in Howard Community College. Duncan Hall is located at 6040 Scholarship Dr, Columbia, MD 21044!`}
-                    />
-                    <FaqQuestion 
-                        question={"Can I use past projects?"} 
-                        answer={`Anyone caught working on past projects will be forced to sit in the corner and wear the dunce hat. Seriously though, don't be that one person.`}
-                    />
-                    <FaqQuestion 
-                        question={"What if I don't have a team?"} 
-                        answer={`No problem! Many participants sign up without a team, and you can meet and work with new friends. You may also choose to work alone. The limit is 4 people per team.`}
-                    />
-                    <FaqQuestion 
-                        question={"Who's Freddy?"} 
-                        answer={`At some point, Freddy had a cheesy description here. However, we can't seem to decide what Freddy is, so we'll just say he's that one duck you keep seeing around on this website.`}
-                    />
-                </div>
-            </div>
-        </div>
-    )
+  return (
+    <div className={styles.sectionContainer}>
+      <h2>FAQ</h2>
+      <div className={styles.questions}>
+        {questions.map(([question, answer]) => (
+          <FaqQuestion key={question} question={question} answer={answer} />
+        ))}
+      </div>
+    </div>
+  );
 }

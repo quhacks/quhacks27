@@ -1,78 +1,25 @@
-import styles from "./component.module.css"
-
+import styles from './component.module.css';
+const sponsors = [
+  ['Solana Foundation', 'solana_foundation.png', 'https://solana.org/', 'Platinum'],
+  ['Wegmans', 'wegmans.png', 'https://www.wegmans.com/', 'Silver'],
+  ['1Password', '1password.png', 'https://1password.com/', 'Bronze'],
+  ['Art of Problem Solving', 'aops.png', 'https://artofproblemsolving.com/', 'Bronze'],
+  ['Jumbo Jumbo', 'jumbo_jumbo.png', 'https://www.jumbojumbocafe.com/', 'Bronze'],
+  ['CodeHS', 'codehs.png', 'https://codehs.com/', 'Bronze'],
+  ['Interview Cake', 'interview_cake.png', 'https://www.interviewcake.com/', 'Bronze'],
+  ['Coca-Cola', 'coca_cola.png', 'https://www.coca-cola.com/us/en', 'Bronze'],
+];
 export default function Sponsors() {
-    return (
-        <div className={styles.sectionContainer}>
-            <h1 className={styles.title}>2026 Sponsors</h1>
-            <div className={styles.sponsorCall}>
-                <p>Interested in sponsoring QuHacks this year? <a href="mailto:info@quhacks.tech">Contact us!</a></p>
-            </div>
-
-            <div className={`${styles.tier} ${styles.platinum}`}>
-                <h1 className={styles.tiername}>Platinum</h1>
-                <div className={styles.row}>
-                    <a rel="noreferrer noopener" target='_blank' href="https://solana.org/">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px"}} src="sponsors/solana_foundation.png" />
-                    </a>
-                </div>
-            </div>
-
-            {/* <div className={`${styles.tier} ${styles.gold}`}>
-                <h1 className={styles.tiername}>Gold</h1>
-                <div className={styles.row}>
-                    <a rel="noreferrer noopener" target='_blank' href="https://www.issi-software.com/">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px"}} src="sponsors/issi.png" />
-                    </a>
-                </div>
-            </div> */}
-
-            <div className={`${styles.tier} ${styles.silver}`}>
-                <h1 className={styles.tiername}>Silver</h1>
-                <div className={styles.row}>
-                    {/* <a rel="noreferrer noopener" target='_blank' href="https://www.wolfram.com/">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px", maxHeight: "7.7rem"}} src="sponsors/wolfram.png" />
-                    </a> */}
-                    <a rel="noreferrer noopener" target='_blank' href="https://www.wegmans.com/">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px"}} src="sponsors/wegmans.png" />
-                    </a>
-                </div>
-            </div>
-
-            <div className={`${styles.tier} ${styles.bronze}`}>
-                <h1 className={styles.tiername}>Bronze</h1>
-                <div className={styles.row}>
-                    <a rel="noreferrer noopener" target='_blank' href="https://1password.com/">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px"}} src="sponsors/1password.png" />
-                    </a>
-                    <a rel="noreferrer noopener" target='_blank' href="https://artofproblemsolving.com/">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px"}} src="sponsors/aops.png" />
-                    </a>
-                    <a rel="noreferrer noopener" target='_blank' href="https://www.jumbojumbocafe.com/">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px"}} src="sponsors/jumbo_jumbo.png" />
-                    </a>
-                    <a rel="noreferrer noopener" target='_blank' href="https://codehs.com/">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px"}} src="sponsors/codehs.png" />
-                    </a>
-                    <a rel="noreferrer noopener" target='_blank' href="https://www.interviewcake.com/">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px"}} src="sponsors/interview_cake.png" />
-                    </a>
-                    <a rel="noreferrer noopener" target='_blank' href="https://www.coca-cola.com/us/en">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px"}} src="sponsors/coca_cola.png" />
-                    </a>
-                    {/* <a rel="noreferrer noopener" target='_blank' href="http://chipotle.com">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px"}} src="sponsors/chipotle.png" />
-                    </a> */}
-                </div>
-            </div>
-
-            {/* <div className={`${styles.tier} ${styles.mediaPartner}`}>
-                <h1 className={styles.tiername}>Partner</h1>
-                <div className={styles.row}>
-                    <a rel="noreferrer noopener" target='_blank' href="https://chspyoneers.com/">
-                        <img style={{backgroundColor: "white", border: "10px solid white", borderRadius: "8px"}} src="sponsors/pyoneers.png" />
-                    </a>
-                </div>
-            </div> */}
-        </div>
-    )
+  return (
+    <div className={styles.sectionContainer}>
+      <h3>Thank you to our 2026 sponsors!</h3>
+      <div className={styles.grid}>
+        {sponsors.map(([name, file, url, tier]) => (
+          <a key={name} href={url} target="_blank" rel="noopener noreferrer" aria-label={`${name}, 2026 ${tier} sponsor`}>
+            <img src={`/sponsors/${file}`} alt={name} loading="lazy" />
+          </a>
+        ))}
+      </div>
+    </div>
+  );
 }
